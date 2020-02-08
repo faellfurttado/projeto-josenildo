@@ -1,4 +1,4 @@
-package br.edu.ifma.pesquisa.discretize.controller;
+package br.edu.ifma.pesquisa.discretize.service;
 
 import java.util.List;
 
@@ -27,5 +27,4 @@ public class DiscretizeForm {
 	public void setTimeSerie(List<Double> timeSerie) {
 		this.timeSerie = timeSerie;
 	}
-
 }
