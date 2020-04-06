@@ -12,17 +12,24 @@ import org.springframework.web.bind.annotation.RestController;
 import br.edu.ifma.pesquisa.map_discretized_list.model.Key;
 
 @RestController
-@RequestMapping("/map-discretzed-list")
+@RequestMapping("/map-discretized-list")
 class MapDiscretizedList {
-
+	
     @PostMapping
-    public Map<String, Key> mapDiscretizedList(@RequestBody List<String> tsListDiscretized) {
-        final Map<String, Key> mapDiscritized = new LinkedHashMap<>();
-
-        // TODO Implements
-        tsListDiscretized.forEach(mapper -> mapDiscritized.put(mapper, new Key()));
-
+    public Map<String, Key<String>> mapDiscretizedList(@RequestBody List<String> tsListDiscretized) {
+        
+    	final Map<String, Key<String>> mapDiscritized = new LinkedHashMap<>();
+    	for (int i = 0; i < tsListDiscretized.size(); i++) {
+    	     String subStr = tsListDiscretized.get(i);
+    	     Key<String> key;
+    	     if (mapDiscritized.containsKey(subStr)) {
+    	         key = mapDiscritized.get(subStr);
+    	     } else {
+    	         key = new Key<String>(subStr);
+    	     }
+    	     key.addOccurences(i);
+    	     mapDiscritized.put(subStr, key);
+    	}
         return mapDiscritized;
     }
-
 }
