@@ -9,7 +9,17 @@ public class Key {
     private String point;
     private final List<Integer> occurences = new ArrayList<>();
 
-    public String getPoint() {
+
+	public Key(String point, int o) {
+		this.point = point;
+		this.occurences.add(o); 
+	}
+	
+	public Key(String point) {
+		this.point = point; 
+	}
+
+	public String getPoint() {
         return point;
     }
 

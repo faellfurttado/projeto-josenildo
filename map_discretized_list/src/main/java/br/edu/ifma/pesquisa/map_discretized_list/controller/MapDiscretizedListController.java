@@ -16,16 +16,16 @@ import br.edu.ifma.pesquisa.map_discretized_list.model.Key;
 class MapDiscretizedList {
 	
     @PostMapping
-    public Map<String, Key<String>> mapDiscretizedList(@RequestBody List<String> tsListDiscretized) {
+    public Map<String, Key> mapDiscretizedList(@RequestBody List<String> tsListDiscretized) {
         
-    	final Map<String, Key<String>> mapDiscritized = new LinkedHashMap<>();
+    	final Map<String, Key> mapDiscritized = new LinkedHashMap<>();
     	for (int i = 0; i < tsListDiscretized.size(); i++) {
     	     String subStr = tsListDiscretized.get(i);
-    	     Key<String> key;
+    	     Key key;
     	     if (mapDiscritized.containsKey(subStr)) {
     	         key = mapDiscritized.get(subStr);
     	     } else {
-    	         key = new Key<String>(subStr);
+    	         key = new Key(subStr);
     	     }
     	     key.addOccurences(i);
     	     mapDiscritized.put(subStr, key);

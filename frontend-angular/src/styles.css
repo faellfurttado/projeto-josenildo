@@ -1,0 +1,25 @@
+body {
+     margin : 0 ;
+     font-family : Arial , Arial , Helvetica , sans-serif ;
+     color : #404c51 ;
+     font-weight : 500 ;
+}
+label {
+      font-weight : 600 ;
+}
+.container {
+       max-width : 1100px ;
+       margin : 0 auto ;
+}
+.col-w6 {
+       width : 6em ;
+       text-align : center ;
+}
+.col-w8 {
+       width : 8em ;
+       text-align : center ;
+}
+.ui-tooltip .ui-tooltip-text {
+       background-color : red ;
+       color : #fff ;
+}
